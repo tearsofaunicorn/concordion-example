@@ -59,6 +59,54 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+					<systemProperties>
+						<property>
+							<name>concordion.output.dir</name>
+							<value>target/specs</value>
+						</property>
+					</systemProperties>
+				</configuration>
+				<executions>
+					<execution>
+						<id>unit-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<skip>false</skip>
+							<testSourceDirectory>src/test/java</testSourceDirectory>
+							<includes>
+								<include>**/*Test.java</include>
+							</includes>
+							<excludes>
+								<exclude>**/*Fixture.java</exclude>
+							</excludes>
+						</configuration>
+					</execution>
+					<execution>
+						<id>acceptance-test</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<skip>false</skip>
+							<testSourceDirectory>src/test/specs</testSourceDirectory>
+							<includes>
+								<include>**/*Fixture.java</include>
+							</includes>
+							<excludes>
+								<exclude>**/*Test.java</exclude>
+							</excludes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
