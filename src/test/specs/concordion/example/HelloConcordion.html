@@ -1,0 +1,8 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+    <body>
+        <p>
+            The greeting for user <span concordion:set="#firstName">Bob</span> will be:
+            <span concordion:assertEquals="greetingFor(#firstName)">Hello Bob!</span>
+        </p>
+    </body>
+</html>

@@ -8,7 +8,6 @@
 	<packaging>jar</packaging>
 
 	<name>example</name>
-	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,10 +16,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
+			<groupId>org.concordion</groupId>
+			<artifactId>concordion</artifactId>
+			<version>1.4.3</version>
 		</dependency>
 	</dependencies>
 
